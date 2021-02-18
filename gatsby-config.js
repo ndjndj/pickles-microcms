@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: process.env.API_KEY,
-        serviceId: 'pickles',
+        apiKey: process.env.X_API_KEY,
+        serviceId: process.env.SERVICE_ID,
         apis: [
           {
             endpoint: "locale-info",
