@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+const style = require("./src/styles/style.css");
 
-// You can delete this file if you're not using it
+module.exports = style;
+
+module.exports.onClientEntry = () => {
+    console.log("We have started!!!!");
+}
