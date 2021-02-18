@@ -40,10 +40,6 @@ module.exports = {
         serviceId: process.env.SERVICE_ID,
         apis: [
           {
-            endpoint: `locale-info`,
-            type: `get`
-          },
-          {
             endpoint: `pickle-api`,
             type: `get`,
           }
