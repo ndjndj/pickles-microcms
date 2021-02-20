@@ -15,7 +15,6 @@ export default function HowToInstall() {
         'Pickle will be stored in your browser.'
     ];
     const title = 'How to Pickle';
-    const direction = 'right';
     const isNum = true;
 
     return (
