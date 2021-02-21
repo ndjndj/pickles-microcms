@@ -3,7 +3,7 @@ import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
 
 export default function Header() {
-    const localeInfo = useStaticQuery(
+    const data = useStaticQuery(
         graphql`
             query {
                 allMicrocmsLocale {
@@ -19,6 +19,15 @@ export default function Header() {
             }
         `
     );
+    const localeInfo = data.allMicrocmsLocale.edges;
+
+    function createSelectOptions(localeInfo) {
+        let jsx = [];
+        localeInfo.forEach(edge => {
+            jsx.push(<option value={edge.node.locale}>{edge.node.localeInfo}</option>);
+        });
+    }
+
     return (
         <header className="header">
             <h1>Pickles</h1>
@@ -26,13 +35,7 @@ export default function Header() {
                 <ul id="header-list">
                     <li>
                         <select name="lang">
-                            {
-                                localeInfo.forEach(
-                                    lang => {
-                                        <option value={lang.node.locale}>{lang.node.localeInfo}</option>
-                                    }
-                                )
-                            }
+                            {}
                         </select>
                     </li>
                     <li>
