@@ -35,7 +35,7 @@ export default function Header() {
                 <ul id="header-list">
                     <li>
                         <select name="lang">
-                            {}
+                            {createSelectOptions(localeInfo)}
                         </select>
                     </li>
                     <li>
