@@ -19,13 +19,14 @@ export default function Header() {
             }
         `
     );
-    const localeInfo = data.allMicrocmsLocale.edges;
-
+    
     function createSelectOptions(localeInfo) {
         let jsx = [];
         localeInfo.forEach(edge => {
-            jsx.push(<option value={edge.node.locale}>{edge.node.localeInfo}</option>);
+            jsx.push(<option key={edge.node.locale} value={edge.node.locale}>{edge.node.localeInfo}</option>);
         });
+
+        return jsx;
     }
 
     return (
@@ -35,7 +36,7 @@ export default function Header() {
                 <ul id="header-list">
                     <li>
                         <select name="lang">
-                            {createSelectOptions(localeInfo)}
+                            {createSelectOptions(data.allMicrocmsLocale.edges)}
                         </select>
                     </li>
                     <li>
