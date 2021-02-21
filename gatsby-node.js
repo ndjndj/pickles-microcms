@@ -74,7 +74,7 @@ exports.createPages = async({ graphql, actions, reporter }) => {
                 createPage({
                       path: `/${edge.node.locale}`
                     , component: path.resolve(`./src/pages/index.js`)
-                    , context: {post: edge.node}
+                    , context: {data: edge.node}
                 });
             }
         );
