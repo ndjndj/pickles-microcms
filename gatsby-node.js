@@ -59,16 +59,6 @@ exports.createPages = async(
                     }
                   }
                 }
-                allMicrocmsLocale {
-                  edges {
-                    node {
-                      locale
-                      localeId
-                      localeInfo
-                      id
-                    }
-                  }
-                }
               }
             `
         );
@@ -80,10 +70,12 @@ exports.createPages = async(
 
         const { edges } = result.data;
 
+
+
         edges.forEach(
             edge => {
                 createPage({
-                      path: `/${edge.node.slug}`
+                      path: `/${edge.node.locale}`
                     , component: path.resolve(`./src/pages/index.js`)
                     , context: {post: edge.node}
                 });
