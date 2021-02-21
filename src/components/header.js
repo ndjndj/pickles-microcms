@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import '../styles/header.css';
 
-export default function Header() {
+export default function Header({ data }) {
+    const localeInfo = data.allMicrocmsLocale.edges;
     return (
         <header className="header">
             <h1>Pickles</h1>
@@ -10,6 +11,9 @@ export default function Header() {
                 <ul id="header-list">
                     <li>
                         <select name="lang">
+                            {
+                                locale
+                            }
                             <option value="en">English</option>
                             <option value="ja">日本語</option>
                         </select>
@@ -25,3 +29,18 @@ export default function Header() {
         </header>
     );
 }
+
+export const query = graphql`
+query {
+    allMicrocmsLocale {
+      edges {
+        node {
+          locale
+          localeId
+          localeInfo
+          id
+        }
+      }
+    }
+  }
+`;
