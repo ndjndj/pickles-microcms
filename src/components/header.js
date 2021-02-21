@@ -2,7 +2,8 @@ import React from 'react';
 import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
 
-export default function Header() {
+export default function Header(props) {
+    const locale = props.path ? props.path : 'en';
     const data = useStaticQuery(
         graphql`
             query {
@@ -19,7 +20,7 @@ export default function Header() {
             }
         `
     );
-    
+
     function createSelectOptions(localeInfo) {
         let jsx = [];
         localeInfo.forEach(edge => {
@@ -35,7 +36,7 @@ export default function Header() {
             <nav>
                 <ul id="header-list">
                     <li>
-                        <select name="lang">
+                        <select name="lang" value={locale}>
                             {createSelectOptions(data.allMicrocmsLocale.edges)}
                         </select>
                     </li>
