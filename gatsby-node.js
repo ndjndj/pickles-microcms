@@ -5,7 +5,71 @@ exports.createPages = async(
         const { createPage } = actions;
 
         const result = await graphql(
-            `
+            `query {
+                allMicrocmsPickleApi {
+                  edges {
+                    node {
+                      AboutPickle {
+                        step1
+                        step2
+                        step3
+                        step4
+                        step5
+                        type
+                      }
+                      Disclaimer {
+                        text
+                        type
+                      }
+                      HowToInstall {
+                        step1
+                        step2
+                        step3
+                        step4
+                        step5
+                        type
+                      }
+                      HowToUnInstall {
+                        step1
+                        step2
+                        step3
+                        step4
+                        step5
+                        type
+                      }
+                      HowToUse {
+                        step1
+                        step2
+                        step3
+                        step4
+                        step5
+                        type
+                      }
+                      PrivacyAssurance {
+                        text
+                        type
+                      }
+                      ReleaseNote {
+                        date(formatString: "YYYY/MM/DD")
+                        info
+                        type
+                      }
+                      locale
+                      type
+                    }
+                  }
+                }
+                allMicrocmsLocale {
+                  edges {
+                    node {
+                      locale
+                      localeId
+                      localeInfo
+                      id
+                    }
+                  }
+                }
+              }
             `
         );
 
