@@ -1,3 +1,7 @@
+import React from 'react';
+import Header from '../components/header';
+import PageIndex from '../components/page-index';
+import AboutPickles from '../components/about-pickles';
 import ReleaseNote from '../components/release-note';
 import HowToInstall from '../components/how-to-install';
 import HowToUnInstall from '../components/how-to-uninstall';
@@ -7,7 +11,7 @@ import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 
-export default function Home({ pageContext }) {
+export default function Locale({ pageContext }) {
   const data = pageContext.post;
   return (
     <React.Fragment>
