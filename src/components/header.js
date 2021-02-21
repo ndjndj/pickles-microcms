@@ -1,9 +1,24 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
 
-export default function Header({ data }) {
-    const localeInfo = data.allMicrocmsLocale.edges;
+export default function Header() {
+    const localeInfo = useStaticQuery(
+        graphql`
+            query {
+                allMicrocmsLocale {
+                    edges {
+                        node {
+                            locale
+                            localeId
+                            localeInfo
+                            id
+                        }
+                    }
+                }
+            }
+        `
+    );
     return (
         <header className="header">
             <h1>Pickles</h1>
@@ -31,18 +46,3 @@ export default function Header({ data }) {
         </header>
     );
 }
-
-export const query = graphql`
-query {
-    allMicrocmsLocale {
-      edges {
-        node {
-          locale
-          localeId
-          localeInfo
-          id
-        }
-      }
-    }
-  }
-`;
