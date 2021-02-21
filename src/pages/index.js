@@ -11,8 +11,8 @@ import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 
-export default function Home({ pageContext }) {
-  const data = pageContext.post;
+export default function Home({ data }) {
+
   return (
     <React.Fragment>
       <Header />
@@ -26,15 +26,75 @@ export default function Home({ pageContext }) {
         <PrivacyAssurance />
         <Disclaimer />
       </div>
-      <ul>
-        <li>{data.AboutPickle.step1}</li>
-        <li>{data.AboutPickle.step2}</li>
-        <li>{data.AboutPickle.step3}</li>
-        <li>{data.AboutPickle.step4}</li>
-        <li>{data.AboutPickle.step5}</li>
-        <li>{data.AboutPickle.type}</li>
-      </ul>
       <Footer />
     </React.Fragment>
   );
 }
+
+export const query = graphql`
+query {
+  allMicrocmsPickleApi {
+    edges {
+      node {
+        AboutPickle {
+          step1
+          step2
+          step3
+          step4
+          step5
+          type
+        }
+        Disclaimer {
+          text
+          type
+        }
+        HowToInstall {
+          step1
+          step2
+          step3
+          step4
+          step5
+          type
+        }
+        HowToUnInstall {
+          step1
+          step2
+          step3
+          step4
+          step5
+          type
+        }
+        HowToUse {
+          step1
+          step2
+          step3
+          step4
+          step5
+          type
+        }
+        PrivacyAssurance {
+          text
+          type
+        }
+        ReleaseNote {
+          date(formatString: "YYYY/MM/DD")
+          info
+          type
+        }
+        locale
+        type
+      }
+    }
+  }
+  allMicrocmsLocale {
+    edges {
+      node {
+        locale
+        localeId
+        localeInfo
+        id
+      }
+    }
+  }
+}
+`;
