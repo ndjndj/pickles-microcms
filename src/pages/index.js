@@ -12,7 +12,7 @@ import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 
 export default function Home({ data }) {
-
+  const pickleApi = data.allMicrocmsPickleApi.edges;
   return (
     <React.Fragment>
       <Header />
