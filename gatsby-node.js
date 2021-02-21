@@ -67,9 +67,7 @@ exports.createPages = async({ graphql, actions, reporter }) => {
             return;
         }
 
-        const { edges } = result.data;
-
-
+        const { edges } = result.data.allMicrocmsPickleApi;
 
         edges.forEach(
             edge => {
