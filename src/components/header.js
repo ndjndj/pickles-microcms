@@ -12,10 +12,12 @@ export default function Header({ data }) {
                     <li>
                         <select name="lang">
                             {
-                                locale
+                                localeInfo.forEach(
+                                    lang => {
+                                        <option value={lang.node.locale}>{lang.node.localeInfo}</option>
+                                    }
+                                )
                             }
-                            <option value="en">English</option>
-                            <option value="ja">日本語</option>
                         </select>
                     </li>
                     <li>
