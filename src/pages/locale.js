@@ -9,7 +9,7 @@ import PrivacyAssurance from '../components/privacy-assurance';
 import Disclaimer from '../components/disclaimer';
 import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
-import { graphql, Link } from 'gatsby';
+
 
 export default function Locale({ pageContext }) {
   const data = pageContext.post;
