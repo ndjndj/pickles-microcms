@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
 
-export default function Header(props) {
+export default function Header() {
+    const [locale, setLocale] = useState('');
+    useEffect(() => console.log(locale));
     const data = useStaticQuery(
         graphql`
             query {
@@ -19,9 +21,12 @@ export default function Header(props) {
             }
         `
     );
+
     function onSelectChange() {
-        const locale = document.getElementById('locale').value;
-        window.location.href = `/${locale}`;
+
+        setLocale(document.getElementById('locale').value);
+
+        
     }
 
     function createSelectOptions(localeInfo) {
@@ -42,9 +47,10 @@ export default function Header(props) {
             <nav>
                 <ul id="header-list">
                     <li>
-                        <select id="locale" name="lang" defaultValue="en" onChange={() =>{onSelectChange()}}>
+                        <select id="locale" name="lang" defaultValue={locale} onChange={() =>{onSelectChange()}}>
                             {createSelectOptions(data.allMicrocmsLocale.edges)}
                         </select>
+                        <a id="translate" >translate</a>
                     </li>
                     <li>
                         <Link to="/">Install now</Link>
