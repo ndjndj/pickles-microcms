@@ -1,10 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
+import { Redirect } from 'react-router';
+import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
+
+class DropDown extends React.Component {
+    onChange = (e) => {
+        this.props.history.push(`/${e.target.value}`);
+    }
+    
+    render() {
+        return (
+        <select id="locale" name="lang" onChange={this.onChange}>
+            {this.props.locales}
+            </select>
+        );
+    }
+}
+
+const Menu = withRouter(DropDown);
 
 export default function Header() {
-    const [locale, setLocale] = useState('');
-    useEffect(() => console.log(locale));
     const data = useStaticQuery(
         graphql`
             query {
@@ -21,15 +37,7 @@ export default function Header() {
             }
         `
     );
-
-    function onSelectChange() {
-
-        setLocale(document.getElementById('locale').value);
-
-        
-    }
-
-    function createSelectOptions(localeInfo) {
+    const createSelectOptions = (localeInfo) => {
         let jsx = [];
         localeInfo.forEach(edge => {
             jsx.push(
@@ -40,26 +48,33 @@ export default function Header() {
 
         return jsx;
     }
-
     return (
-        <header className="header">
-            <h1>Pickles</h1>
-            <nav>
-                <ul id="header-list">
-                    <li>
-                        <select id="locale" name="lang" defaultValue={locale} onChange={() =>{onSelectChange()}}>
-                            {createSelectOptions(data.allMicrocmsLocale.edges)}
-                        </select>
-                        <a id="translate" >translate</a>
-                    </li>
-                    <li>
-                        <Link to="/">Install now</Link>
-                    </li>
-                    <li>
-                        <Link to="/">Contact us</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <Router>
+            <header className="header">
+                <h1>Pickles</h1>
+                <nav>
+                    <ul id="header-list">
+                        <li>
+                            <Menu locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
+                        </li>
+                        <li>
+                            <Link to="/">Install now</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Contact us</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+            </header>
+
+            <Switch>
+                <Route path='/ja' />
+                <Route path='/en' />
+                <Route path="/first-route" render={() => <h1>First Selected</h1>} />
+                <Route path="/second-route" render={() => <h1>Second Selected</h1>} />
+            </Switch>
+        </Router>
+
     );
 }
