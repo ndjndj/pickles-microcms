@@ -4,13 +4,17 @@ import '../styles/header.css';
 import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
 class DropDown extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {selectedLocale: 'en'};
+    }
     onChange = (e) => {
         navigate(`/${e.target.value}`);
     }
 
     render() {
         return (
-            <select id="locale" name="lang" onChange={this.onChange}>
+            <select id="locale" name="lang" defaultValue={} onChange={this.onChange}>
                 {this.props.locales}
             </select>
         );
