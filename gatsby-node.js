@@ -9,11 +9,7 @@ exports.createPages = async({ graphql, actions, reporter }) => {
                   edges {
                     node {
                       AboutPickle {
-                        step1
-                        step2
-                        step3
-                        step4
-                        step5
+                        text
                         type
                       }
                       Disclaimer {

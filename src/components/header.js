@@ -1,17 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { useStaticQuery, Link } from 'gatsby';
+import React from 'react';
+import { useStaticQuery, Link, navigate } from 'gatsby';
 import '../styles/header.css';
-import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
-import Locale from '../pages/locale';
 class DropDown extends React.Component {
+    constructor(props) {
+        super(props);
+        const defaultLocale = this.props.selectedLocale ? this.props.selectedLocale : 'en';
+        this.state = {selectedLocale: defaultLocale};
+        console.log('run constructor.');
+        console.log( 'this.props.locale is ' + this.props.selectedLocale);
+        console.log(this.state.selectedLocale);
+    }
+
     onChange = (e) => {
-        this.props.history.push(`/${e.target.value}`);
+        let target = String(e.target.value);
+        this.setState(
+              {selectedLocale: target}
+            , () => {navigate(`/${target}`, {selectedLocale: target})}
+        );
     }
 
     render() {
         return (
-            <select id="locale" name="lang" onChange={this.onChange}>
+            <select id="locale" name="lang" defaultValue={this.state.selectedLocale} onChange={this.onChange}>
                 {this.props.locales}
             </select>
         );
@@ -70,8 +81,8 @@ export default function Header() {
             </header>
 
             <Switch>
-                <Route path='/ja' render={() => {}}/>
-                <Route path='/en' render={() => {}}/>
+                <Route path='/ja' />
+                <Route path='/en' />
             </Switch>
         </Router>
 

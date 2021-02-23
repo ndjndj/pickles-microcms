@@ -15,7 +15,7 @@ export default function Home({ data }) {
   const pickleApi = data.allMicrocmsPickleApi.edges;
   return (
     <React.Fragment>
-      <Header locale='en' />
+      <Header selectedLocale='en' />
       <div id="contents">
         <PageIndex />
         <AboutPickles />
@@ -37,11 +37,7 @@ query {
     edges {
       node {
         AboutPickle {
-          step1
-          step2
-          step3
-          step4
-          step5
+          text
           type
         }
         Disclaimer {
