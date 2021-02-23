@@ -15,7 +15,7 @@ export default function Locale({ pageContext }) {
   const data = pageContext.post;
   return (
     <React.Fragment>
-      <Header />
+      <Header locale='en' />
       <div id="contents">
         <PageIndex />
         <AboutPickles />
