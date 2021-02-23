@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useStaticQuery, Link, navigate } from 'gatsby';
 import '../styles/header.css';
-import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {selectedLocale: 'en'};
-    }
-    onChange = (e) => {
-        this.setState({selectedLocale: e.target.value});
+        const defaultLocale = this.props.locale ? this.props.locale : 'en';
+        this.state = {selectedLocale: defaultLocale};
         console.log(this.state.selectedLocale);
-        navigate(`/${e.target.value}`, );
+    }
+
+    onChange = (e) => {
+        let target = String(e.target.value);
+        this.setState(
+              {selectedLocale: target}
+            , () => {navigate(`/${target}`, {selectedLocale: target})}
+        );
     }
 
     render() {
