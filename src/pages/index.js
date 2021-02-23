@@ -15,7 +15,7 @@ export default function Home({ data }) {
   const pickleApi = data.allMicrocmsPickleApi.edges;
   return (
     <React.Fragment>
-      <Header locale='en' />
+      <Header selectedLocale='en' />
       <div id="contents">
         <PageIndex />
         <AboutPickles />
