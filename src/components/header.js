@@ -3,16 +3,16 @@ import { useStaticQuery, Link } from 'gatsby';
 import '../styles/header.css';
 import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
-
+import Locale from '../pages/locale';
 class DropDown extends React.Component {
     onChange = (e) => {
         this.props.history.push(`/${e.target.value}`);
     }
-    
+
     render() {
         return (
-        <select id="locale" name="lang" onChange={this.onChange}>
-            {this.props.locales}
+            <select id="locale" name="lang" onChange={this.onChange}>
+                {this.props.locales}
             </select>
         );
     }
@@ -37,6 +37,7 @@ export default function Header() {
             }
         `
     );
+
     const createSelectOptions = (localeInfo) => {
         let jsx = [];
         localeInfo.forEach(edge => {
@@ -69,10 +70,8 @@ export default function Header() {
             </header>
 
             <Switch>
-                <Route path='/ja' />
-                <Route path='/en' />
-                <Route path="/first-route" render={() => <h1>First Selected</h1>} />
-                <Route path="/second-route" render={() => <h1>Second Selected</h1>} />
+                <Route path='/ja' render={() => {}}/>
+                <Route path='/en' render={() => {}}/>
             </Switch>
         </Router>
 
