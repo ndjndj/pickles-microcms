@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useStaticQuery, Link } from 'gatsby';
-import { Redirect } from 'react-router-dom';
 import '../styles/header.css';
 
 export default function Header(props) {
-    const [locale, setLocale] = useState('en');
     const data = useStaticQuery(
         graphql`
             query {
@@ -21,15 +19,16 @@ export default function Header(props) {
             }
         `
     );
-    function onSelectChange(locale) {
-        locale = setLocale(locale);
-        return <Redirect to={`/${locale}`}/>
+    function onSelectChange() {
+        const locale = document.getElementById('locale').value;
+        window.location.href = `/${locale}`;
     }
+
     function createSelectOptions(localeInfo) {
         let jsx = [];
         localeInfo.forEach(edge => {
             jsx.push(
-                <option key={edge.node.locale} value={locale} >
+                <option key={edge.node.locale} value={edge.node.locale} >
                         {edge.node.localeInfo}
                 </option>);
         });
@@ -43,7 +42,7 @@ export default function Header(props) {
             <nav>
                 <ul id="header-list">
                     <li>
-                        <select name="lang" defaultValue="en" onChange={() =>{onSelectChange(locale)}}>
+                        <select id="locale" name="lang" defaultValue="en" onChange={() =>{onSelectChange()}}>
                             {createSelectOptions(data.allMicrocmsLocale.edges)}
                         </select>
                     </li>
