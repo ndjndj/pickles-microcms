@@ -9,12 +9,14 @@ class DropDown extends React.Component {
         this.state = {selectedLocale: 'en'};
     }
     onChange = (e) => {
-        navigate(`/${e.target.value}`);
+        this.setState({selectedLocale: e.target.value});
+        console.log(this.state.selectedLocale);
+        navigate(`/${e.target.value}`, );
     }
 
     render() {
         return (
-            <select id="locale" name="lang" defaultValue={} onChange={this.onChange}>
+            <select id="locale" name="lang" defaultValue={this.state.selectedLocale} onChange={this.onChange}>
                 {this.props.locales}
             </select>
         );
