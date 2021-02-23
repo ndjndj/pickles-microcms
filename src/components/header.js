@@ -5,8 +5,10 @@ import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
-        const defaultLocale = this.props.locale ? this.props.locale : 'en';
+        const defaultLocale = this.props.selectedLocale ? this.props.selectedLocale : 'en';
         this.state = {selectedLocale: defaultLocale};
+        console.log('run constructor.');
+        console.log( 'this.props.locale is ' + this.props.selectedLocale);
         console.log(this.state.selectedLocale);
     }
 
