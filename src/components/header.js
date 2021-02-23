@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useStaticQuery, Link } from 'gatsby';
+import { useStaticQuery, Link, navigate } from 'gatsby';
 import '../styles/header.css';
 import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
-import Locale from '../pages/locale';
 class DropDown extends React.Component {
     onChange = (e) => {
-        this.props.history.push(`/${e.target.value}`);
+        //this.props.history.push(`/${e.target.value}`);
+        navigate(`/${e.target.value}`);
     }
 
     render() {
@@ -70,8 +70,8 @@ export default function Header() {
             </header>
 
             <Switch>
-                <Route path='/ja' render={() => {}}/>
-                <Route path='/en' render={() => {}}/>
+                <Route path='/ja' />
+                <Route path='/en' />
             </Switch>
         </Router>
 
