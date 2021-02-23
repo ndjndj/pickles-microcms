@@ -13,6 +13,7 @@ import Footer from '../components/footer';
 
 export default function Locale({ pageContext }) {
   const data = pageContext.post;
+  console.log(data);
   return (
     <React.Fragment>
       <Header locale='en' />

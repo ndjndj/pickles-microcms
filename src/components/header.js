@@ -5,7 +5,6 @@ import { Redirect } from 'react-router';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
 class DropDown extends React.Component {
     onChange = (e) => {
-        //this.props.history.push(`/${e.target.value}`);
         navigate(`/${e.target.value}`);
     }
 
