@@ -23,8 +23,8 @@ export default function Locale({ pageContext }) {
         <ReleaseNote note={data.ReleaseNote} />
         <HowToInstall bullets={data.HowToInstall[0]} />
         <HowToUnInstall bullets={data.HowToUnInstall[0]} />
-        <HowToUse bullets={data.HowToUse}/>
-        <PrivacyAssurance />
+        <HowToUse bullets={data.HowToUse} />
+        <PrivacyAssurance desc={data.PrivacyAssurance.text} />
         <Disclaimer />
       </div>
       <ul>
