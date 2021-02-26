@@ -20,8 +20,8 @@ export default function Locale({ pageContext }) {
       <div id="contents">
         <PageIndex />
         <AboutPickles desc={data.AboutPickle.text} />
-        <ReleaseNote note={data.ReleaseNote}/>
-        <HowToInstall />
+        <ReleaseNote note={data.ReleaseNote} />
+        <HowToInstall bullets={data.HowToInstall[0]} />
         <HowToUnInstall />
         <HowToUse />
         <PrivacyAssurance />
