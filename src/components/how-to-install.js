@@ -6,17 +6,17 @@ import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
 import LP_2 from '../img/PicklesLP_2.png';
 
-export default function HowToInstall() {
+export default function HowToInstall(props) {
     const bullets = [
-        'Click to Pickles icon.',
-        'Click to SAVE button.',
-        'Please enter Pickles name.',
-        'Click to SAVE button.',
-        'Pickle will be stored in your browser.'
+        props.bullets['step1'],
+        props.bullets['step2'],
+        props.bullets['step3'],
+        props.bullets['step4'],
+        props.bullets['step5']
     ];
     const title = 'How to Pickle';
     const isNum = true;
-
+    console.log(props.bullets);
     return (
         <Wrapper wrapperId="how-to-install" title="How to install">
             <FlexWrapper

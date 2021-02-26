@@ -6,13 +6,13 @@ import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
 import LP_2 from '../img/PicklesLP_2.png';
 
-export default function HowToUnInstall() {
+export default function HowToUnInstall(props) {
     const bullets = [
-        'Click to Pickles icon.',
-        'Click to tabs button.',
-        'Click to Pickle to open tabs.',
-        'Click to INFO button to check the Pickle.',
-        'Click to DEL button to delete the Pickle.'
+        props.bullets['step1'],
+        props.bullets['step2'],
+        props.bullets['step3'],
+        props.bullets['step4'],
+        props.bullets['step5']
     ];
     const title = 'How to Pickle.';
     const isNum = true;

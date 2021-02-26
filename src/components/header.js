@@ -7,9 +7,6 @@ class DropDown extends React.Component {
         super(props);
         const defaultLocale = this.props.selectedLocale ? this.props.selectedLocale : 'en';
         this.state = {selectedLocale: defaultLocale};
-        console.log('run constructor.');
-        console.log( 'this.props.locale is ' + this.props.selectedLocale);
-        console.log(this.state.selectedLocale);
     }
 
     onChange = (e) => {
@@ -22,7 +19,7 @@ class DropDown extends React.Component {
 
     render() {
         return (
-            <select id="locale" name="lang" defaultValue={this.state.selectedLocale} onChange={this.onChange}>
+            <select id="locale" name="lang" value={this.state.selectedLocale} onChange={this.onChange}>
                 {this.props.locales}
             </select>
         );

@@ -19,22 +19,14 @@ export default function Locale({ pageContext }) {
       <Header selectedLocale='ja' />
       <div id="contents">
         <PageIndex />
-        <AboutPickles />
-        <ReleaseNote />
-        <HowToInstall />
-        <HowToUnInstall />
-        <HowToUse />
-        <PrivacyAssurance />
-        <Disclaimer />
+        <AboutPickles desc={data.AboutPickle.text} />
+        <ReleaseNote note={data.ReleaseNote} />
+        <HowToInstall bullets={data.HowToInstall[0]} />
+        <HowToUnInstall bullets={data.HowToUnInstall[0]} />
+        <HowToUse bullets={data.HowToUse} />
+        <PrivacyAssurance desc={data.PrivacyAssurance.text} />
+        <Disclaimer desc={data.Disclaimer.text} />
       </div>
-      <ul>
-        <li>{data.AboutPickle.step1}</li>
-        <li>{data.AboutPickle.step2}</li>
-        <li>{data.AboutPickle.step3}</li>
-        <li>{data.AboutPickle.step4}</li>
-        <li>{data.AboutPickle.step5}</li>
-        <li>{data.AboutPickle.type}</li>
-      </ul>
       <Footer />
     </React.Fragment>
   );

@@ -3,10 +3,9 @@ import '../styles/privacy-assurance.css';
 import Wrapper from '../components/wrapper';
 import Sentence from '../components/sentence';
 
-export default function PrivacyAssurance() {
+export default function PrivacyAssurance(props) {
     const sentences = [
-        'We, Pickles developers take the privacy of Pickles users very seriously.',
-        'Stored tab information in your browser will not be sent or disclosed to Pickles developers or any other third party.',
+       props.desc
     ];
     return (
         <Wrapper wrapperId="privacy-assurance" title="Privacy assurance">

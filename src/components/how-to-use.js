@@ -6,8 +6,10 @@ import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
 import LP_2 from '../img/PicklesLP_2.png';
 
-
-export default function HowToUse() {
+export default function HowToUse(props) {
+    const howToUse = props.bullets[0];
+    const howToCheck = props.bullets[1];
+    const whatElse = props.bullets[2];
     return (
         <Wrapper wrapperId="how-to-use" title="How to use">
             <FlexWrapper
@@ -22,11 +24,11 @@ export default function HowToUse() {
                 rightComponent = {
                     <BulletWrapper
                         bullets = {[
-                            'Click to Pickles icon.',
-                            'Click to SAVE button.',
-                            'Please enter Pickles name.',
-                            'Click to SAVE button.',
-                            'Pickle will be stored in your browser.'
+                            howToUse['step1'],
+                            howToUse['step2'],
+                            howToUse['step3'],
+                            howToUse['step4'],
+                            howToUse['step5']
                         ]}
                         title = {'How to Pickle.'}
                         direction = {'right'}
@@ -39,11 +41,11 @@ export default function HowToUse() {
                 leftComponent = {
                     <BulletWrapper
                         bullets = {[
-                            'Click to Pickles icon.',
-                            'Click to tabs button.',
-                            'Click to Pickle to open tabs.',
-                            'Click to INFO button to check the Pickle.',
-                            'Click to DEL button to delete the Pickle.'
+                            howToCheck['step1'],
+                            howToCheck['step2'],
+                            howToCheck['step3'],
+                            howToCheck['step4'],
+                            howToCheck['step5']
                         ]}
                         title = {'How to check Pickle.'}
                         direction = {'left'}
@@ -72,9 +74,9 @@ export default function HowToUse() {
                 rightComponent = {
                     <BulletWrapper
                         bullets = {[
-                            'Click to DL CSV button to download Pickle with CSV format.',
-                            'Click to DL md button to download Pickle with markdown format.',
-                            'Click to output md button to copy Pickle with markdown format.'
+                            whatElse['step1'],
+                            whatElse['step2'],
+                            whatElse['step3']
                         ]}
                         title = {'What else Pickles can do?'}
                         direction = {'right'}
