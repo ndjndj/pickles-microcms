@@ -19,7 +19,7 @@ export default function Locale({ pageContext }) {
       <Header selectedLocale='ja' />
       <div id="contents">
         <PageIndex />
-        <AboutPickles />
+        <AboutPickles desc={data.AboutPickle.text} />
         <ReleaseNote />
         <HowToInstall />
         <HowToUnInstall />
@@ -28,11 +28,6 @@ export default function Locale({ pageContext }) {
         <Disclaimer />
       </div>
       <ul>
-        <li>{data.AboutPickle.step1}</li>
-        <li>{data.AboutPickle.step2}</li>
-        <li>{data.AboutPickle.step3}</li>
-        <li>{data.AboutPickle.step4}</li>
-        <li>{data.AboutPickle.step5}</li>
         <li>{data.AboutPickle.type}</li>
       </ul>
       <Footer />

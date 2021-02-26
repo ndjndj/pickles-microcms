@@ -4,8 +4,9 @@ import Button from '../components/button';
 import Wrapper from '../components/wrapper';
 import LP_1 from '../img/PicklesLP_1.png';
 
-export default function AboutPickles() {
+export default function AboutPickles(props) {
     const installLink = "https://chrome.google.com/webstore/detail/pickles/cbbhnfkdiimgbfbmaaamdcdmjmgbgpoa";
+    const desc = props.desc;
     return (
         <Wrapper wrapperId="about-pickles" title="About Pickles" >
             <div className="img">
@@ -13,12 +14,7 @@ export default function AboutPickles() {
             </div>
 
             <div className="description">
-                    <p>Excessively open tabs consume a lot of memory.</p>
-                    <p>Use 'Pickles' to pickle that excessively opened tabs.</p>
-
-                    <p>'Pickles' is a simple Google Chrome extension.</p>
-
-                    <p>You can install it from the link below(it will be redirected to Google web store).</p>
+                    <p>{desc}</p>
             </div>
 
             <Button link={installLink} sentence={"Install now"} />
