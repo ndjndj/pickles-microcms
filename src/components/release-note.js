@@ -2,18 +2,13 @@ import React from 'react';
 import '../styles/release-note.css';
 import Wrapper from '../components/wrapper';
 
-export default function ReleaseNote() {
-    const releaseInfomations = [
-        {
-            'dt': 'December 28th, 2020',
-            'dd': 'Created this page.'
-        },
-        {
-            'dt': 'December 21th, 2020',
-            'dd': 'Released Pickles ver 1.0'
+export default function ReleaseNote(props) {
+    const releaseInfomations = props.note.map(
+        (arr) => {
+            return {'dt': arr['date'], 'dd': arr['info']}
         }
-    ];
-
+    );
+    
     function createReleaseNotes(releaseInfomations) {
         let jsx = [];
 
@@ -25,7 +20,7 @@ export default function ReleaseNote() {
                 </React.Fragment>
             );
         }
-        
+
         return jsx;
     }
 
