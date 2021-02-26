@@ -12,19 +12,22 @@ import Footer from '../components/footer';
 import { graphql, Link } from 'gatsby';
 
 export default function Home({ data }) {
-  const pickleApi = data.allMicrocmsPickleApi.edges;
+  let apis = data.allMicrocmsPickleApi.edges;
+  const pickleApi = apis.filter(obj => obj.node.locale == 'en')[0].node;
+  console.log(apis);
+  console.log(pickleApi);
   return (
     <React.Fragment>
       <Header selectedLocale='en' />
       <div id="contents">
         <PageIndex />
-        <AboutPickles />
-        <ReleaseNote />
-        <HowToInstall />
-        <HowToUnInstall />
-        <HowToUse />
-        <PrivacyAssurance />
-        <Disclaimer />
+        <AboutPickles desc={pickleApi.AboutPickle.text} />
+        <ReleaseNote note={pickleApi.ReleaseNote} />
+        <HowToInstall bullets={pickleApi.HowToInstall[0]} />
+        <HowToUnInstall bullets={pickleApi.HowToUnInstall[0]} />
+        <HowToUse bullets={pickleApi.HowToUse} />
+        <PrivacyAssurance desc={pickleApi.PrivacyAssurance.text} />
+        <Disclaimer desc={pickleApi.Disclaimer.text} />
       </div>
       <Footer />
     </React.Fragment>
