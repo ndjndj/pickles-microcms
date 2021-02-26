@@ -25,7 +25,7 @@ export default function Locale({ pageContext }) {
         <HowToUnInstall bullets={data.HowToUnInstall[0]} />
         <HowToUse bullets={data.HowToUse} />
         <PrivacyAssurance desc={data.PrivacyAssurance.text} />
-        <Disclaimer />
+        <Disclaimer desc={data.Disclaimer.text} />
       </div>
       <ul>
         <li>{data.AboutPickle.type}</li>
