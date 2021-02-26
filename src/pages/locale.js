@@ -22,7 +22,7 @@ export default function Locale({ pageContext }) {
         <AboutPickles desc={data.AboutPickle.text} />
         <ReleaseNote note={data.ReleaseNote} />
         <HowToInstall bullets={data.HowToInstall[0]} />
-        <HowToUnInstall />
+        <HowToUnInstall bullets={data.HowToUnInstall[0]} />
         <HowToUse />
         <PrivacyAssurance />
         <Disclaimer />
