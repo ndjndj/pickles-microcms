@@ -27,9 +27,6 @@ export default function Locale({ pageContext }) {
         <PrivacyAssurance desc={data.PrivacyAssurance.text} />
         <Disclaimer desc={data.Disclaimer.text} />
       </div>
-      <ul>
-        <li>{data.AboutPickle.type}</li>
-      </ul>
       <Footer />
     </React.Fragment>
   );
