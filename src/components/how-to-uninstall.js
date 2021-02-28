@@ -4,7 +4,7 @@ import Wrapper from '../components/wrapper';
 import BulletWrapper from '../components/bullet-wrapper';
 import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
-import LP_2 from '../img/PicklesLP_2.png';
+import howToUninstallPic from '../img/how-to-uninstall.png';
 
 export default function HowToUnInstall(props) {
     const bullets = [
@@ -31,7 +31,7 @@ export default function HowToUnInstall(props) {
 
                 rightComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {howToUninstallPic}
                         imgAlt = {''}
                         direction = {'right'}
                     />
