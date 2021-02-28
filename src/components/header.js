@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, Link, navigate } from 'gatsby';
+import { useStaticQuery, Link, navigate, graphql } from 'gatsby';
 import '../styles/header.css';
 import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
 class DropDown extends React.Component {
