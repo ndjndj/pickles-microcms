@@ -43,7 +43,7 @@ export default function Header() {
             }
         `
     );
-
+    const installLink = "https://chrome.google.com/webstore/detail/pickles/cbbhnfkdiimgbfbmaaamdcdmjmgbgpoa";
     const createSelectOptions = (localeInfo) => {
         let jsx = [];
         localeInfo.forEach(edge => {
@@ -65,7 +65,7 @@ export default function Header() {
                             <DropDown locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
                         </li>
                         <li>
-                            <Link to="/">Install now</Link>
+                            <a href={installLink}>Install now</a>
                         </li>
                         <li>
                             <Link to="/">Contact us</Link>
