@@ -10,13 +10,12 @@ import Disclaimer from '../components/disclaimer';
 import HowToUse from '../components/how-to-use';
 import Footer from '../components/footer';
 
-
 export default function Locale({ pageContext }) {
   const data = pageContext.post;
-  console.log(data);
+  if (!data) return null
   return (
     <React.Fragment>
-      <Header selectedLocale='ja' />
+      <Header selectedLocale={data.locale} />
       <div id="contents">
         <PageIndex />
         <AboutPickles desc={data.AboutPickle.text} />
