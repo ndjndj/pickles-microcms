@@ -74,6 +74,5 @@ export default function Header() {
                 </nav>
             </header>
         </React.Fragment>
-
     );
 }
