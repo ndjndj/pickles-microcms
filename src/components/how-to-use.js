@@ -6,6 +6,7 @@ import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
 import howToPicklePic from '../img/how-to-pickle.png';
 import howToCheckPic from '../img/how-to-check.png';
+import whatElsePic from '../img/what-else.png';
 
 export default function HowToUse(props) {
     const howToUse = props.bullets[0];
@@ -66,7 +67,7 @@ export default function HowToUse(props) {
             <FlexWrapper
                 leftComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {whatElsePic}
                         imgAlt = {''}
                         direction = {'left'}
                     />
