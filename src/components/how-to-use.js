@@ -4,7 +4,9 @@ import Wrapper from '../components/wrapper';
 import BulletWrapper from '../components/bullet-wrapper';
 import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
-import LP_2 from '../img/PicklesLP_2.png';
+import howToPicklePic from '../img/how-to-pickle.png';
+import howToCheckPic from '../img/how-to-check.png';
+import whatElsePic from '../img/what-else.png';
 
 export default function HowToUse(props) {
     const howToUse = props.bullets[0];
@@ -15,7 +17,7 @@ export default function HowToUse(props) {
             <FlexWrapper
                 leftComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {howToPicklePic}
                         imgAlt = {''}
                         direction = {'left'}
                     />
@@ -55,7 +57,7 @@ export default function HowToUse(props) {
 
                 rightComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {howToCheckPic}
                         imgAlt = {''}
                         direction = {'right'}
                     />
@@ -65,7 +67,7 @@ export default function HowToUse(props) {
             <FlexWrapper
                 leftComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {whatElsePic}
                         imgAlt = {''}
                         direction = {'left'}
                     />
