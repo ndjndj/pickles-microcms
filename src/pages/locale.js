@@ -12,7 +12,7 @@ import Footer from '../components/footer';
 
 export default function Locale({ pageContext }) {
   const data = pageContext.post;
-
+  if (!data) return null
   return (
     <React.Fragment>
       <Header selectedLocale='ja' />
