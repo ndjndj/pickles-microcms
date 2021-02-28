@@ -1,9 +1,8 @@
 import React from 'react';
 import { useStaticQuery, Link, navigate, graphql } from 'gatsby';
 import '../styles/header.css';
-import { withRouter } from 'react-router-dom';
-import { Router } from '@reach/router';
-import Locale from '../pages/locale';
+//import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
+//import { Router } from '@reach/router';
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
@@ -28,7 +27,7 @@ class DropDown extends React.Component {
     }
 }
 
-const Menu = withRouter(DropDown);
+// const Menu = withRouter(DropDown);
 
 export default function Header() {
     const data = useStaticQuery(
@@ -60,13 +59,13 @@ export default function Header() {
         return jsx;
     }
     return (
-        <Router>
+        <React.Fragment>
             <header className="header">
                 <h1>Pickles</h1>
                 <nav>
                     <ul id="header-list">
                         <li>
-                            <Menu locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
+                            <DropDown locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
                         </li>
                         <li>
                             <Link to="/">Install now</Link>
@@ -78,12 +77,7 @@ export default function Header() {
                 </nav>
 
             </header>
-
-            <Router basepath='/'>
-                <Locale path='/ja' />
-                <Locale path='/en' />
-            </Router>
-        </Router>
+        </React.Fragment>
 
     );
 }
