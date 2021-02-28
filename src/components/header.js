@@ -79,7 +79,7 @@ export default function Header() {
 
             </header>
 
-            <Router>
+            <Router basepath='/'>
                 <Locale path='/ja' />
                 <Locale path='/en' />
             </Router>
