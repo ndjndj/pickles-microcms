@@ -1,8 +1,7 @@
 import React from 'react';
 import { useStaticQuery, Link, navigate, graphql } from 'gatsby';
 import '../styles/header.css';
-//import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
-//import { Router } from '@reach/router';
+
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
@@ -26,8 +25,6 @@ class DropDown extends React.Component {
         );
     }
 }
-
-// const Menu = withRouter(DropDown);
 
 export default function Header() {
     const data = useStaticQuery(
@@ -75,7 +72,6 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
-
             </header>
         </React.Fragment>
 
