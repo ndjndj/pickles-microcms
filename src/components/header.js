@@ -1,7 +1,9 @@
 import React from 'react';
 import { useStaticQuery, Link, navigate, graphql } from 'gatsby';
 import '../styles/header.css';
-import { Switch, Route, BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { Router } from '@reach/router';
+import Locale from '../pages/locale';
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
@@ -77,10 +79,10 @@ export default function Header() {
 
             </header>
 
-            <Switch>
-                <Route path='/ja' />
-                <Route path='/en' />
-            </Switch>
+            <Router>
+                <Locale path='/ja' />
+                <Locale path='/en' />
+            </Router>
         </Router>
 
     );
