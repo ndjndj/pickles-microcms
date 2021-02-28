@@ -4,7 +4,7 @@ import Wrapper from '../components/wrapper';
 import BulletWrapper from '../components/bullet-wrapper';
 import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
-import LP_2 from '../img/PicklesLP_2.png';
+import howToInstallPic from '../img/how-to-install.png';
 
 export default function HowToInstall(props) {
     const bullets = [
@@ -22,7 +22,7 @@ export default function HowToInstall(props) {
             <FlexWrapper
                 leftComponent = {
                     <ImgWrapper
-                        imgSrc = {LP_2}
+                        imgSrc = {howToInstallPic}
                         imgAlt = {''}
                         direction = {'left'}
                     />
