@@ -17,8 +17,7 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
         head: true,
       }
-    }
-    ,
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
