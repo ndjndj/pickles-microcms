@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, Link, navigate, graphql } from 'gatsby';
 import '../styles/header.css';
-
+import Button from '../components/button';
 class DropDown extends React.Component {
     constructor(props) {
         super(props);
@@ -65,7 +65,7 @@ export default function Header() {
                             <DropDown locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
                         </li>
                         <li>
-                            <a href={installLink}>Install now</a>
+                            <Button link={installLink} sentence={"Install now"} />
                         </li>
                     </ul>
                 </nav>
