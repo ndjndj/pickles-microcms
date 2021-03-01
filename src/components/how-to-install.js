@@ -12,7 +12,6 @@ export default function HowToInstall(props) {
         props.bullets['step2'],
         props.bullets['step3'],
         props.bullets['step4'],
-        props.bullets['step5']
     ];
     const title = 'How to Pickle';
     const isNum = true;
