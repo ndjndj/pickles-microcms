@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/button.css';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 export default function Button(props) {
     const link = props.link;
     const sentence = props.sentence;
     return (
-        <a href={link} className="btn" target="_blank" rel="noopener noreferrer">
+        <OutboundLink href={link} className="btn" target="_blank" rel="noopener noreferrer">
             {sentence}
-        </a>
+        </OutboundLink>
     );
 }
