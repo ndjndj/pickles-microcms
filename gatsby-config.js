@@ -18,6 +18,7 @@ module.exports = {
         head: true,
       }
     },
+    `gatsby-plugin-sitemap`, 
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
