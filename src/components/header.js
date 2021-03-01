@@ -67,9 +67,6 @@ export default function Header() {
                         <li>
                             <a href={installLink}>Install now</a>
                         </li>
-                        <li>
-                            <Link to="/">Contact us</Link>
-                        </li>
                     </ul>
                 </nav>
             </header>
