@@ -21,7 +21,6 @@ exports.createPages = async({ graphql, actions, reporter }) => {
                         step2
                         step3
                         step4
-                        step5
                         type
                       }
                       HowToUnInstall {
@@ -29,7 +28,6 @@ exports.createPages = async({ graphql, actions, reporter }) => {
                         step2
                         step3
                         step4
-                        step5
                         type
                       }
                       HowToUse {
