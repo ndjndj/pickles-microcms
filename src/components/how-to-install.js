@@ -5,6 +5,7 @@ import BulletWrapper from '../components/bullet-wrapper';
 import ImgWrapper from '../components/img-wrapper';
 import FlexWrapper from '../components/flex-wrapper';
 import howToInstallPic from '../img/how-to-install.png';
+import Button from '../components/button';
 
 export default function HowToInstall(props) {
     const bullets = [
@@ -12,8 +13,8 @@ export default function HowToInstall(props) {
         props.bullets['step2'],
         props.bullets['step3'],
         props.bullets['step4'],
-        props.bullets['step5']
     ];
+    const installLink = "https://chrome.google.com/webstore/detail/pickles/cbbhnfkdiimgbfbmaaamdcdmjmgbgpoa";
     const title = 'How to Pickle';
     const isNum = true;
     console.log(props.bullets);
@@ -37,6 +38,7 @@ export default function HowToInstall(props) {
                     />
                 }
             />
+            <Button link={installLink} sentence={"Install now"} />
         </Wrapper>
     );
 }
