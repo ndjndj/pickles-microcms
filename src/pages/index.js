@@ -52,7 +52,6 @@ query {
           step2
           step3
           step4
-          step5
           type
         }
         HowToUnInstall {
@@ -60,7 +59,6 @@ query {
           step2
           step3
           step4
-          step5
           type
         }
         HowToUse {
