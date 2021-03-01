@@ -65,7 +65,7 @@ export default function Header() {
                             <DropDown locales={createSelectOptions(data.allMicrocmsLocale.edges)} />
                         </li>
                         <li>
-                            <Button link={installLink} sentence={"Install now"} />
+                            <Button _className="header-btn" link={installLink} sentence={"Install now"} />
                         </li>
                     </ul>
                 </nav>
