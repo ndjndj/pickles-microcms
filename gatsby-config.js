@@ -9,7 +9,7 @@ module.exports = {
     title: `Pickles pages`,
     description: `how to Pickles.`,
     author: `@ndj`,
-    siteUrl: `https://how-to-pickles.netlify.app/`,
+    siteUrl: `https://how-to-pickles.netlify.app`,
   },
   plugins: [
     {
