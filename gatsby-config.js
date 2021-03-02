@@ -9,6 +9,7 @@ module.exports = {
     title: `Pickles pages`,
     description: `how to Pickles.`,
     author: `@ndj`,
+    siteUrl: `https://how-to-pickles.netlify.app/`,
   },
   plugins: [
     {
@@ -18,7 +19,7 @@ module.exports = {
         head: true,
       }
     },
-    `gatsby-plugin-sitemap`, 
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
